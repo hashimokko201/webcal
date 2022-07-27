@@ -1,0 +1,12 @@
+form {
+    display:inline-block;
+}
+
+label {
+    display: block;
+}
+
+input[type="text"]
+textarea {
+    border:1px #fff solid;
+}

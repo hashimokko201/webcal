@@ -7,6 +7,20 @@ get '/:y/:m' do
   @year = params[:y].to_i
   @month = params[:m].to_i
 
+  @y1 = @year
+  @m1 = @month - 1
+  if @m1 == 0
+    @m1 = 12
+    @y1 = @y1 - 1
+  end
+
+  @y2 = @year
+  @m2 = @month + 1
+  if @m2 == 13
+    @m2 = 1
+    @y2 = @y2 + 1
+  end
+
   @t = "<table border>"
   @t = @t + "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>"
   @t = @t + "<th>Thu</th><th>Fri</th><th>Sat</th></tr>"
@@ -38,6 +52,13 @@ get '/:y/:m' do
   @t = @t + "</table>"
 
   erb :moncal
+end
+
+get '/' do
+  today = Time.now
+  y = today.year
+  m = today.month
+  redirect "http://127.0.0.1:4567/#{y}/#{m}"
 end
 
 def isLeapYear(y)
