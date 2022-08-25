@@ -84,3 +84,9 @@ def zeller(y, m, d)
   return c
 end
 
+post '/push' do
+  #iy = params[:input_year].to_i
+  #im = params[:input_month].to_i
+  redirect "http://127.0.0.1:4567/#{params[:input_year]}/#{params[:input_month]}"
+end
+

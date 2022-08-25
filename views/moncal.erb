@@ -2,7 +2,7 @@
 
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 
-<link rel="stylesheet" href="stylesheet.css">
+<link rel="stylesheet" href="./stylesheet.css">
 
 
 <%= @year %>年<%= @month %>月
@@ -13,15 +13,15 @@
 <%= @t %>
 
 <div class="wrapper">
-  <form action="#">
+  <form action="/push" method="post" accept-charset="utf-8">
     <div>
-      <input type="text" id="year" size="5" name="input-year">
+      <input type="text" id="year" size="5" name="input_year">
       <label for="name">年</label>
     </div>
     <div>
-      <input type="text" id="month" size="3" name="input-month">
+      <input type="text" id="month" size="3" name="input_month">
       <label for="name">月</label>
     </div>
-    <input type="submit" class="button" value="送信">
+    <input type="submit" class="button" value="push">
   </form>
 </div>
